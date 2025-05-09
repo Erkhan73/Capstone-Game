@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt2wicl6lgg6m"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_5cwy4"]
+[ext_resource type="Texture2D" uid="uid://c685dexe2r7lm" path="res://ChatGPT Image May 8, 2025 at 08_10_45 PM.png" id="2_ga3v7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f8qma"]
+font_size = 50
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5cwy4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 1256.0
+offset_top = 965.0
+offset_right = 2153.0
+offset_bottom = 1280.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Play"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Quit"
+
+[node name="ChatGptImageMay8,2025At081045Pm" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(1690.5, 1062.5)
+scale = Vector2(3.4248, 2.14941)
+texture = ExtResource("2_ga3v7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 272.0
+offset_bottom = 124.0
+text = "Use the Arrow Keys to Move
+Space Bar to Jump
+Mouse to look around"
+label_settings = SubResource("LabelSettings_f8qma")
+uppercase = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
